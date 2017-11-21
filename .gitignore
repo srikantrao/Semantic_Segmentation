@@ -100,4 +100,6 @@ ENV/
 # mypy
 .mypy_cache/
 
-RUNS/
+runs/1511187770*
+data
+saved

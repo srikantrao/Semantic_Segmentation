@@ -1,6 +1,22 @@
 # Semantic Segmentation
-### Introduction
-In this project, you'll label the pixels of a road in images using a Fully Convolutional Network (FCN).
+
+Hyperparameters used
+
+1. Number of Epochs used - Total Number of epochs = 60
+    1.  40 epochs with learning rate = 0.0001
+    2.  10 epochs with learning rate = 0.00001
+    3.  10 epochs with learning rate - 0.000001
+2. Batch Size = 8. Experimented with batch_size of 1 for a NVIDIA 940MX GPU but it ran out of memory. Trained the FCN using CPU only ( which took 2 sitting of 6 hours each).
+Tried batch size of 16 but that crashed.
+
+3. There was no data augmentation and this still led to good results on the test data set.
+But the results from the video indicate that augmentation would be really helpful.
+
+4. The final loss of the model is shown in the image below -
+
+![Alt text](./loss.png?raw=true "Final Loss")
+
+A link to the video can be found here - https://youtu.be/Fvoe6KXnBns
 
 ### Setup
 ##### Frameworks and Packages
@@ -12,25 +28,8 @@ Make sure you have the following is installed:
 ##### Dataset
 Download the [Kitti Road dataset](http://www.cvlibs.net/datasets/kitti/eval_road.php) from [here](http://www.cvlibs.net/download.php?file=data_road.zip).  Extract the dataset in the `data` folder.  This will create the folder `data_road` with all the training a test images.
 
-### Start
-##### Implement
-Implement the code in the `main.py` module indicated by the "TODO" comments.
-The comments indicated with "OPTIONAL" tag are not required to complete.
 ##### Run
 Run the following command to run the project:
 ```
 python main.py
 ```
-**Note** If running this in Jupyter Notebook system messages, such as those regarding test status, may appear in the terminal rather than the notebook.
-
-### Submission
-1. Ensure you've passed all the unit tests.
-2. Ensure you pass all points on [the rubric](https://review.udacity.com/#!/rubrics/989/view).
-3. Submit the following in a zip file.
- - `helper.py`
- - `main.py`
- - `project_tests.py`
- - Newest inference images from `runs` folder  (**all images from the most recent run**)
- 
- ## How to write a README
-A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
